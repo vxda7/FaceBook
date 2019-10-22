@@ -9,8 +9,10 @@
   {% bootstrap_css %}
 </head>
 <body>
-  {% block body %}
-  {% endblock %}
-  {% bootstrap_javascipt jquery="full" %}
+  <div class="container">
+    {% block body %}
+    {% endblock %}
+  </div>
+  {% bootstrap_javascript jquery="full" %}
 </body>
 </html>
