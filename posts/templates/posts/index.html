@@ -9,8 +9,15 @@
         <h5 class="card-title">{{post.title}}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{post.user.username}}</h6>
         <p class="card-text">{{post.content}}</p>
-        <a href="">
-          <button type="button" class="btn btn-outline-primary">Detail</button>
+        <p>{{post.like_users.all.count}}</p>
+        <a href="{% url 'posts:like' post.id %}">
+          <button type="button" class="btn btn-outline-primary">
+            {% if user in post.like_users.all%}
+              취소
+            {% else %}
+              좋아요
+            {% endif %}
+          </button>
         </a>
       </div>
     </div>
