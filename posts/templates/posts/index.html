@@ -2,4 +2,18 @@
 {% load bootstrap4 %}
 {% block body %}
   <h1>Index</h1>
+  <div class="row">
+    {% for post in posts %}
+    <div class="card mx-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{post.user.username}}</h6>
+        <p class="card-text">{{post.content}}</p>
+        <a href="">
+          <button type="button" class="btn btn-outline-primary">Detail</button>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 {% endblock %}
